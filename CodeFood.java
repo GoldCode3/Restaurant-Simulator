@@ -39,17 +39,30 @@ public class CodeFood
     System.out.println("-B- Super Hot Dog");
     System.out.println("-C- Crispiest Chicken Tenders");
     System.out.println("-D- Three Footlong Pizza");
-    Scanner sc= new Scanner(System.in); //Creating a new scanner
-    char s= sc.next().charAt(0); //Storing the user's choice of food by letter
+	  
+	  
+    //Creating a new scanner object
+    Scanner sc= new Scanner(System.in); 
+	  
+	  
+    //Storing the user's choice of food by letter  
+    char s= sc.next().charAt(0); 
     System.out.println("Would you like to add a scrumptious basket "
-    		+ "of the most French French Fries to your meal? Please select Y for Yes and N for no");
-    char f= sc.next().charAt(0); //Storing choice of fries or not
+    		+ "of the most French French Fries to your meal? Please select Y for Yes and N for No");
+	  
+	  
+    //Storing choice of fries or not
+    char f= sc.next().charAt(0);
+	  
+    //Initializing the price of each individual item
     double subTotal= 0;
     double A= 13.50;
     double B= 7.50;
     double C= 10.00;
     double D= 11.75;
     double frenchFries= 4.50;
+	  
+	  
     if (s== 'A')
     {
     	subTotal+= A;
@@ -66,26 +79,18 @@ public class CodeFood
     {
     	subTotal+= D;
     }
-    else
-    {
-    	System.out.println("Sorry that item is not on the menu, please try again!");
-    	char sAgain= sc.next().charAt(0);
-    }
+    
     if (f== 'Y')
     {
     	subTotal+= frenchFries;
     	System.out.println("Ok no problem!");
     }
+
     else if (f== 'N')
     {
     	System.out.println("No problem, your order will be out shortly");
     }
-    else
-    {
-    	System.out.println("Sorry I did not understand whether or not you wanted fries");
-    	System.out.println("Select Y for Yes or N for No");
-    	char friesAgain= sc.next().charAt(0);
-    }
+  
     System.out.println("--------------------------------------------------");
     System.out.println("Sub Total: " + subTotal);
     //Calculate subtotal and and gratuity charge
@@ -95,10 +100,10 @@ public class CodeFood
 	double z = subTotal*y; //Taking that percentage from the subtotal of the meal
 	double grandTotal = subTotal+z; //Adding the tip to the subtotal
 	//Displaying the gratuity price and the grand total
-	System.out.println("The amount of tip that you should pay is $" + z);
-	System.out.println("The total price of your meal including tip is $" + grandTotal); 
+	System.out.printf("The amount of tip that you should pay is $ %.2f%n", z);
+	System.out.printf("The total price of your meal including tip is $ %.2f%n", grandTotal);
     System.out.println("------------------------------------------------");
-	System.out.println("Thank for dining at Code Food!");
+	System.out.println("Thanks for dining at Code Food!");
     System.out.println("We hope to see you again soon!");
     System.out.println("Enjoy the rest of your day!");
 
